@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Country } from '../types';
 import { COUNTRIES } from '../constants';
@@ -21,8 +20,8 @@ export const LearnMode: React.FC<LearnModeProps> = ({ onShowFlag }) => {
   });
 
   return (
-    <div className="flex flex-col min-h-screen bg-white max-w-2xl mx-auto pb-24">
-      {/* Header */}
+    <div className="flex flex-col min-h-full bg-white max-w-2xl mx-auto">
+      {/* Header - Sticky relative to the App's main scroll container */}
       <div className="px-4 pt-6 pb-4 bg-white sticky top-0 z-10 border-b border-slate-100">
         <h1 className="text-3xl font-black text-slate-800 mb-4">Explore</h1>
 

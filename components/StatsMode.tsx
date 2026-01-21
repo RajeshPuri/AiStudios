@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { GameState } from '../types';
 
@@ -12,7 +11,7 @@ export const StatsMode: React.FC<StatsModeProps> = ({ gameState }) => {
     : 0;
 
   return (
-    <div className="flex flex-col min-h-screen bg-slate-50 p-4 pb-24 max-w-md mx-auto">
+    <div className="flex flex-col min-h-full bg-slate-50 p-4 max-w-md mx-auto">
       <h1 className="text-3xl font-black text-slate-800 mb-6 mt-4">Statistics</h1>
       
       <div className="grid grid-cols-2 gap-4 mb-6">
@@ -35,7 +34,7 @@ export const StatsMode: React.FC<StatsModeProps> = ({ gameState }) => {
       </div>
 
       <h2 className="text-xl font-bold text-slate-800 mb-4">Recent Activity</h2>
-      <div className="space-y-3">
+      <div className="space-y-3 pb-12">
         {gameState.history.slice().reverse().slice(0, 15).map((item, idx) => (
           <div key={idx} className="flex items-center justify-between bg-white p-4 rounded-xl shadow-sm border border-slate-100">
             <div className="flex items-center gap-3">

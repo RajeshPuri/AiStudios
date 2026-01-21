@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { Country, GameState, QuestionType, QuizQuestion } from '../types';
 import { COUNTRIES } from '../constants';
@@ -125,7 +124,7 @@ export const QuizGame: React.FC<QuizGameProps> = ({ gameState, setGameState, onS
   if (showRoundResults) {
     const passed = roundCorrect >= PASSING_SCORE;
     return (
-      <div className="flex flex-col min-h-screen bg-white p-6 justify-center items-center max-w-md mx-auto text-center">
+      <div className="flex flex-col min-h-full bg-white p-6 justify-center items-center max-w-md mx-auto text-center">
         <div className={`w-24 h-24 rounded-full flex items-center justify-center mb-6 ${passed ? 'bg-emerald-100 text-emerald-600' : 'bg-rose-100 text-rose-600'}`}>
           {passed ? (
             <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -172,7 +171,7 @@ export const QuizGame: React.FC<QuizGameProps> = ({ gameState, setGameState, onS
   if (!currentQuestion) return null;
 
   return (
-    <div className="flex flex-col min-h-screen bg-slate-50 p-4 pb-24 max-w-md mx-auto">
+    <div className="flex flex-col min-h-full bg-slate-50 p-4 max-w-md mx-auto">
       {/* Header Info */}
       <div className="flex justify-between items-center mb-4 pt-4">
         <div>

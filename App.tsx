@@ -55,15 +55,15 @@ const App: React.FC = () => {
       case GameMode.HOME:
       default:
         return (
-          <div className="h-[100dvh] flex flex-col bg-slate-50 p-6 overflow-hidden max-w-md mx-auto relative">
+          <div className="min-h-full flex flex-col bg-slate-50 p-6 max-w-md mx-auto relative">
             {/* Header Section */}
-            <div className="flex-1 flex flex-col items-center justify-center text-center">
+            <div className="flex-1 flex flex-col items-center justify-center text-center py-4">
               <div className="relative mb-4">
                 <div className="absolute inset-0 bg-indigo-200 rounded-3xl rotate-6 blur-lg opacity-50"></div>
                 <img 
                   src="https://flagcdn.com/w320/un.png" 
                   alt="FlagQuest" 
-                  className="w-24 h-auto rounded-2xl shadow-xl relative"
+                  className="w-20 h-auto rounded-2xl shadow-xl relative"
                 />
               </div>
               <h1 className="text-3xl font-black text-slate-800 tracking-tight">FlagQuest</h1>
@@ -82,7 +82,7 @@ const App: React.FC = () => {
             </div>
 
             {/* Quick Actions Grid */}
-            <div className="grid grid-cols-1 gap-3 mb-24 shrink-0">
+            <div className="grid grid-cols-1 gap-3 shrink-0 pb-6">
               <button 
                 onClick={() => setMode(GameMode.QUIZ)}
                 className="group relative bg-white border border-slate-200 p-4 rounded-2xl flex items-center gap-4 hover:border-indigo-500 transition-all shadow-sm active:scale-95"
@@ -121,9 +121,10 @@ const App: React.FC = () => {
 
   return (
     <div className="relative h-[100dvh] w-screen overflow-hidden bg-slate-50 flex flex-col">
-      <div className="flex-1 overflow-hidden">
+      {/* Scrollable Main Area */}
+      <main className="flex-1 overflow-y-auto no-scrollbar pb-24">
         {renderContent()}
-      </div>
+      </main>
       
       {/* Bottom Nav */}
       <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-100 px-2 flex justify-around items-center z-40 pb-safe shadow-2xl shadow-slate-900/10">
@@ -160,6 +161,10 @@ const App: React.FC = () => {
         }
         .no-scrollbar::-webkit-scrollbar {
           display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
     </div>
