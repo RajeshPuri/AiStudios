@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { GameMode, Country, GameState } from './types';
 import { QuizGame } from './components/QuizGame';
@@ -56,7 +55,7 @@ const App: React.FC = () => {
       case GameMode.HOME:
       default:
         return (
-          <div className="h-screen flex flex-col bg-slate-50 p-6 overflow-hidden max-w-md mx-auto">
+          <div className="h-[100dvh] flex flex-col bg-slate-50 p-6 overflow-hidden max-w-md mx-auto relative">
             {/* Header Section */}
             <div className="flex-1 flex flex-col items-center justify-center text-center">
               <div className="relative mb-4">
@@ -121,13 +120,13 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-50">
-      <div className="h-full">
+    <div className="relative h-[100dvh] w-screen overflow-hidden bg-slate-50 flex flex-col">
+      <div className="flex-1 overflow-hidden">
         {renderContent()}
       </div>
       
       {/* Bottom Nav */}
-      <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-100 px-2 flex justify-around items-center z-40 pb-safe shadow-2xl shadow-slate-900/5">
+      <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-100 px-2 flex justify-around items-center z-40 pb-safe shadow-2xl shadow-slate-900/10">
         <NavItem 
           targetMode={GameMode.HOME} 
           label="Home" 
